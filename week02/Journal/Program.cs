@@ -25,7 +25,9 @@ class Program
             if (choice == "1")
             {
                 Entry entry = new Entry();
-                entry._date = DateTime.Now.ToString();
+                DateTime theCurrentTime = DateTime.Now;
+                string dateText = theCurrentTime.ToShortDateString();
+                entry._date = dateText;
                 entry._promptText = promptGenerator.GetRandomPrompt();
                 Console.WriteLine(entry._promptText);
                 entry._entryText = Console.ReadLine();
